@@ -32,6 +32,8 @@ import connectBreweryConnector from './containers/brewery/connectBrewery';
 import BreweryForm from './components/brewery/BreweryForm';
 import connectBreweryForm from './containers/brewery/connectBreweryForm';
 
+import connectEtpExtra from './containers/etp-extra/connectPersonForm';
+
 const BASE_PATH = '/';
 
 const edsFocusDrawerExercise = assembleComponentWithFocusDrawer('Focus Drawer', EdsFocusDrawerComponent, EdsFocusDrawer);
@@ -64,6 +66,7 @@ const getRoutes = () => {
                     <IndexRoute component={connectBreweryConnector(BreweryComponent)} />
                     <Route path="form" components={breweryComponent} />
                 </Route> 
+                <Route path="etp-extra" component={connectEtpExtra()} />
             </Route>
             <Route path="*" onEnter={goToBaseUrl} />
         </Route>

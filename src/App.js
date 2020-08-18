@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
 import { configureStore } from 'js-utils/redux';
-import { getHistory, updateHistory } from 'js-utils/router';
+import { getHistory } from 'js-utils/router';
 
 import reducer from './reducer';
 import { getInitialState } from './reducer/utils';

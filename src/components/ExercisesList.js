@@ -83,6 +83,15 @@ const brewery = [
     },
 ];
 
+const extraEtpClass = [
+
+    {
+        content: 'Redux + Redux-form',
+        value: 'exercises/etp-extra',
+        iconType: <ReactChunkySvg />,
+    },
+];
+
 export default class ExercisesList extends React.Component {
     handleNavigate = (route) => {
         browserHistory.push(route);
@@ -123,6 +132,14 @@ export default class ExercisesList extends React.Component {
                     style="container"
                 >
                     <TextList items={brewery} onItemSelect={this.handleNavigate}/>
+                </ExpansionPanel>
+                <ExpansionPanel
+                    linkText="ETP 19-08"
+                    verticalMargin="both"
+                    //eslint-disable-next-line react/style-prop-object
+                    style="container"
+                >
+                    <TextList items={extraEtpClass} onItemSelect={this.handleNavigate}/>
                 </ExpansionPanel>
             </section>
         )
