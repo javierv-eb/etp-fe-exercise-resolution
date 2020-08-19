@@ -13,13 +13,14 @@ import { getInitialState } from './reducer/utils';
 import getRoutes from './routes';
 
 import 'eventbrite_design_system/css/eds.css';
+import fetcherMiddleware from './middleware/pageFetcher';
 
 export default class App extends Component {
     history = getHistory();
     store = configureStore({
         reducer,
         initialState: getInitialState(),
-        middleware: [thunk, routerMiddleware(this.history), createLogger({collapsed: true})],
+        middleware: [thunk, routerMiddleware(this.history), createLogger({collapsed: true}), fetcherMiddleware],
     });
     history = syncHistoryWithStore(this.history, this.store);
   
